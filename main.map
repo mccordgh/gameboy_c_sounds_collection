@@ -18,39 +18,40 @@ AREA .  .ABS.
 		s__SFR	0000
 		l__GSINITTAIL	0001
 		l__BSS	0059
-		l__CODE	0138
+		l__DATA	0086
+		l__BASE	0125
+		l__CODE	01A1
 		l__HOME	01AC
 		l__HEADER	01E1
 		s__CODE	0200
-		l__BASE	021A
-		s__HOME	0338
-		l__DATA	0370
-		s__BASE	04E4
-		s__LIT	06FE
-		s__GSINIT	06FE
-		l__GSINIT	14A0
-		s__GSINITTAIL	1B9E
-		s__GSFINAL	1B9F
+		l__GSINIT	030A
+		s__HOME	03A1
+		s__BASE	054D
+		s__LIT	0672
+		s__GSINIT	0672
+		s__GSINITTAIL	097C
+		s__GSFINAL	097D
 		.OAM	C000
 		s__DATA	C0A0
-		s__BSS	C410
-		s__HEAP	C469
-		s__BSEG	C469
-		s__ISEG	C469
-		s__XSEG	C469
-		s__OVERLAY	C469
+		s__BSS	C126
+		s__HEAP	C17F
+		s__BSEG	C17F
+		s__ISEG	C17F
+		s__XSEG	C17F
+		s__OVERLAY	C17F
 		.STACK	E000
 		.refresh_OAM	FF80
 		l__SFR	10000
 AREA _CODE
 	RADIX HEX
 	BASE 0200
-	SIZE 0138
+	SIZE 01A1
 	ATTRIB REL CON
 	GLOBALS
-		_main	0200
-		_main_2	0238
-		_main_1	0288
+		_performatdelay	0200
+		_wouldhitsurface	0214
+		_jump	0229
+		_main	02C7
 AREA _HEADER
 	RADIX HEX
 	BASE 0000
@@ -60,157 +61,150 @@ AREA _HEADER
 		_exit	01D2
 AREA _HOME
 	RADIX HEX
-	BASE 0338
+	BASE 03A1
 	SIZE 01AC
 	ATTRIB REL CON
 	GLOBALS
-		.set_mode	0338
-		.remove_VBL	0348
-		.remove_LCD	034E
-		.remove_TIM	0354
-		.remove_SIO	035A
-		.remove_JOY	0360
-		.add_VBL	0366
-		.add_LCD	036C
-		.add_TIM	0372
-		.add_SIO	0378
-		.add_JOY	037E
-		.remove_int	0384
-		.add_int	03A4
-		.wait_vbl_done	03C0
-		_wait_vbl_done	03C0
-		_display_off	03D7
-		.display_off	03D7
-		.serial_IO	03F8
-		_mode	0427
-		_get_mode	0430
-		_enable_interrupts	0435
-		_disable_interrupts	0437
-		_reset	0439
-		.reset	0439
-		_set_interrupts	043F
-		_remove_VBL	044A
-		_remove_LCD	0455
-		_remove_TIM	0460
-		_remove_SIO	046B
-		_remove_JOY	0476
-		_add_VBL	0481
-		_add_LCD	048C
-		_add_TIM	0497
-		_add_SIO	04A2
-		_add_JOY	04AD
-		_clock	04B8
-		__printTStates	04C1
-		banked_call	04C2
-		banked_ret	04DB
+		.set_mode	03A1
+		.remove_VBL	03B1
+		.remove_LCD	03B7
+		.remove_TIM	03BD
+		.remove_SIO	03C3
+		.remove_JOY	03C9
+		.add_VBL	03CF
+		.add_LCD	03D5
+		.add_TIM	03DB
+		.add_SIO	03E1
+		.add_JOY	03E7
+		.remove_int	03ED
+		.add_int	040D
+		.wait_vbl_done	0429
+		_wait_vbl_done	0429
+		_display_off	0440
+		.display_off	0440
+		.serial_IO	0461
+		_mode	0490
+		_get_mode	0499
+		_enable_interrupts	049E
+		_disable_interrupts	04A0
+		_reset	04A2
+		.reset	04A2
+		_set_interrupts	04A8
+		_remove_VBL	04B3
+		_remove_LCD	04BE
+		_remove_TIM	04C9
+		_remove_SIO	04D4
+		_remove_JOY	04DF
+		_add_VBL	04EA
+		_add_LCD	04F5
+		_add_TIM	0500
+		_add_SIO	050B
+		_add_JOY	0516
+		_clock	0521
+		__printTStates	052A
+		banked_call	052B
+		banked_ret	0544
 AREA _BASE
 	RADIX HEX
-	BASE 04E4
-	SIZE 021A
+	BASE 054D
+	SIZE 0125
 	ATTRIB REL CON
 	GLOBALS
-		_scroll_bkg	04E4
-		.mv_sprite	04FA
-		_move_sprite	0509
-		_set_win_data	0516
-		_set_bkg_data	0516
-		_set_sprite_data	0563
-		.scroll_sprite	0592
-		_scroll_sprite	05A3
-		.padup	05B0
-		_waitpadup	05B0
-		.jpad	05C0
-		.wait_pad	05ED
-		_joypad	05F4
-		_waitpad	05F9
-		.set_sprite_tile	0603
-		_set_sprite_tile	0610
-		.delay	061B
-		_delay	0655
-		.copy_vram	065E
-		_get_data	066D
-		_set_data	066D
-		_set_bkg_tiles	0680
-		.set_xy_wtt	0694
-		.set_xy_btt	06A5
-		.set_xy_tt	06B4
-		_set_tiles	06E5
+		.mv_sprite	054D
+		_move_sprite	055C
+		_set_win_data	0569
+		_set_bkg_data	0569
+		_set_sprite_data	05B6
+		.padup	05E5
+		_waitpadup	05E5
+		.jpad	05F5
+		.wait_pad	0622
+		_joypad	0629
+		_waitpad	062E
+		.set_sprite_tile	0638
+		_set_sprite_tile	0645
+		.copy_vram	0650
+		_get_data	065F
+		_set_data	065F
 AREA _LIT
 	RADIX HEX
-	BASE 06FE
+	BASE 0672
 	SIZE 0000
 	ATTRIB REL CON
 AREA _GSINIT
 	RADIX HEX
-	BASE 06FE
-	SIZE 14A0
+	BASE 0672
+	SIZE 030A
 	ATTRIB REL CON
 	GLOBALS
-		gsinit	06FE
+		gsinit	0672
 AREA _GSINITTAIL
 	RADIX HEX
-	BASE 1B9E
+	BASE 097C
 	SIZE 0001
 	ATTRIB REL CON
 AREA _GSFINAL
 	RADIX HEX
-	BASE 1B9F
+	BASE 097D
 	SIZE 0000
 	ATTRIB REL CON
 AREA _DATA
 	RADIX HEX
 	BASE C0A0
-	SIZE 0370
+	SIZE 0086
 	ATTRIB REL CON
 	GLOBALS
-		_Smiler	C0A0
-		_backgroundmap	C0C0
-		_backgroundtiles	C390
+		_bloke	C0A0
+		_playerlocation	C120
+		_jumping	C122
+		_gravity	C123
+		_currentspeedY	C124
+		_floorYPosition	C125
 AREA _BSS
 	RADIX HEX
-	BASE C410
+	BASE C126
 	SIZE 0059
 	ATTRIB REL CON
 	GLOBALS
-		__cpu	C410
-		.mode	C411
-		__io_out	C412
-		__io_in	C413
-		__io_status	C414
-		.vbl_done	C415
-		__current_bank	C416
-		_sys_time	C417
-		.sys_time	C417
-		.int_0x40	C419
-		.int_0x48	C429
-		.int_0x50	C439
-		.int_0x58	C449
-		.int_0x60	C459
+		__cpu	C126
+		.mode	C127
+		__io_out	C128
+		__io_in	C129
+		__io_status	C12A
+		.vbl_done	C12B
+		__current_bank	C12C
+		_sys_time	C12D
+		.sys_time	C12D
+		.int_0x40	C12F
+		.int_0x48	C13F
+		.int_0x50	C14F
+		.int_0x58	C15F
+		.int_0x60	C16F
 AREA _HEAP
 	RADIX HEX
-	BASE C469
+	BASE C17F
 	SIZE 0000
 	ATTRIB REL CON
 	GLOBALS
-		_malloc_heap_start	C469
+		_malloc_heap_start	C17F
 AREA _OVERLAY
 	RADIX HEX
-	BASE C469
+	BASE C17F
 	SIZE 0000
 	ATTRIB REL CON
 AREA _ISEG
 	RADIX HEX
-	BASE C469
+	BASE C17F
 	SIZE 0000
 	ATTRIB REL CON
 AREA _BSEG
 	RADIX HEX
-	BASE C469
+	BASE C17F
 	SIZE 0000
 	ATTRIB REL CON
 AREA _XSEG
 	RADIX HEX
-	BASE C469
+	BASE C17F
 	SIZE 0000
 	ATTRIB REL CON
 AREA _SFR
@@ -278,30 +272,20 @@ MODULES
 	FILE c:\gbdk\lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE main.o
-		NAME lcc66640
+		NAME lcc159280
 LIBRARIES
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE sfr.o
-	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
-		MODULE scroll_b.o
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE mv_spr.o
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE set_data.o
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
-		MODULE scroll_s.o
-	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE pad.o
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE set_spr.o
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
-		MODULE delay.o
-	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE cpy_data.o
-	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
-		MODULE set_bk_t.o
-	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
-		MODULE set_xy_t.o
 USERBASEDEF
 	_CODE=0x0200
 	_DATA=0xC0A0
