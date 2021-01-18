@@ -1,1 +1,1 @@
-C:\Users\mattm\Games\bgb\bgb.exe .\main.gb
+start /b C:\Users\mattm\Games\bgb\bgb.exe .\main.gb

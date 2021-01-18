@@ -20,20 +20,25 @@ void main()
     // gameloop
     while(1)
     {
-        if (currentSpriteIndex == 0)
+        switch (joypad())
         {
-            currentSpriteIndex = 1;
+            case J_LEFT:
+                scroll_sprite(0, -4, 0);
+                break;
+            
+            case J_RIGHT:
+                scroll_sprite(0, 4, 0);
+                break;
+            
+            case J_UP:
+                scroll_sprite(0, 0, -4);
+                break;
+            
+            case J_DOWN:
+                scroll_sprite(0, 0, 4);
+                break;
         }
-        else
-        {
-            currentSpriteIndex = 0;
-        }
 
-        set_sprite_tile(0, currentSpriteIndex);
-
-        delay(1000);
-
-        // moving sprite
-        scroll_sprite(0, 10, 0);
+        delay(100);
     }
 }
