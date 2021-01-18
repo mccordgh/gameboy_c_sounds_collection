@@ -2,7 +2,30 @@
 #include <stdio.h>
 #include "sprites/SmilerSprites.c"
 
+#include "sprites/SimpleBackground.c"
+#include "sprites/SimpleBackgroundTiles.c"
+
 void main()
+{
+    // load background data
+    set_bkg_data(0, 7, backgroundtiles);
+
+    // set the background tiles
+    set_bkg_tiles(0, 0, 40, 18, backgroundmap);
+
+    SHOW_BKG;
+    DISPLAY_ON;
+
+    while(1)
+    {
+        scroll_bkg(2, 0);
+
+        delay(100);
+    }
+}
+
+// THIS IS DRAWING A SPRITE AND SCROLLING
+void main_1()
 {
     UINT8 currentSpriteIndex = 0;
 
