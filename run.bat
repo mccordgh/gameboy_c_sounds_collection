@@ -1,0 +1,1 @@
+C:\Users\mattm\Games\bgb\bgb.exe .\main.gb
