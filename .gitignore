@@ -7,3 +7,6 @@
 *.map
 *.o
 *.sym
+
+# Local project Intellisense settings
+.vscode/c_cpp_properties.json
