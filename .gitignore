@@ -1,0 +1,9 @@
+# Build / Debugger Files
+*.adb
+*.asm
+*.cdb
+*.ihx
+*.lst
+*.map
+*.o
+*.sym
