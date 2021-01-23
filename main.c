@@ -1,4 +1,4 @@
-#include "gb/gb.h"
+#include <gb/gb.h>
 #include <stdio.h>
 
 unsigned char bloke[] =
@@ -23,7 +23,7 @@ unsigned char bloke[] =
 
 INT8 playerlocation[2]; // stores two INT8 x and y positions of player
 BYTE jumping;
-UINT8 gravity = -2;
+INT8 gravity = -2;
 UINT8 currentspeedY;
 UINT8 floorYPosition = 100;
 

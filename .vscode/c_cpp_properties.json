@@ -6,9 +6,9 @@
                 "${workspaceFolder}/**",
                 "${vcpkgRoot}/x64-windows/include",
                 "${vcpkgRoot}/x86-windows/include",
-                "C:/gbdk/include/gb",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/ucrt/sys",
-                "C:/gbdk/include"
+                "C:/gbdk2020/gbdk/include/**",
+                "C:/gbdk2020/gbdk/include/asm/",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/ucrt/sys"
             ],
             "defines": [
                 "_DEBUG",
