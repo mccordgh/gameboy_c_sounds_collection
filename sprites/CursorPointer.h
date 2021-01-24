@@ -1,6 +1,6 @@
 /*
 
- SIMPLEBACKGROUNDTILES.H
+ CURSORPOINTER.H
 
  Include File.
 
@@ -10,7 +10,7 @@
   Compression          : None.
   Counter              : None.
   Tile size            : 8 x 8
-  Tiles                : 0 to 7
+  Tiles                : 0 to 1
 
   Palette colors       : None.
   SGB Palette          : None.
@@ -24,8 +24,8 @@
 
 
 /* Bank of tiles. */
-#define backgroundtilesBank 0
+#define CursorPointerBank 0
 /* Start of tile array. */
-extern unsigned char backgroundtiles[];
+extern unsigned char CursorPointer[];
 
-/* End of SIMPLEBACKGROUNDTILES.H */
+/* End of CURSORPOINTER.H */
